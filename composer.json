@@ -49,7 +49,7 @@
       "url": "https://github.com/shrikeh/app-symfony"
     }
   ],
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
       "Shrikeh\\HelloWorld\\": "src"
