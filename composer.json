@@ -11,7 +11,6 @@
   ],
   "require": {
     "php": ">=8.3",
-    "phpdocumentor/reflection-docblock": "5.x-dev",
     "phpstan/phpdoc-parser": "^1.31",
     "symfony/serializer": "^7.1"
   },
