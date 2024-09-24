@@ -1,6 +1,4 @@
 grumphp:
-  extensions:
-    - Tests\GrumPHP\Extension\PhpBench
   parallel:
     enabled: false
   tasks:
@@ -40,5 +38,4 @@ grumphp:
       mutators: []
       ignore_patterns: []
       triggered_by: [php]
-    phpbench: ~
   

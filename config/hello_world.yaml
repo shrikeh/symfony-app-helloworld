@@ -1,0 +1,31 @@
+---
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  Shrikeh\HelloWorld\:
+    resource: '../src/'
+    
+  hello_world.console.command_factory.celestial_greeting:
+    class: Shrikeh\SymfonyApp\Console\Action\Cqrs\CommandFactory\Decorator\CorrelatedCommand
+    decorates: Shrikeh\HelloWorld\Console\Greet\CelestialGreetingFactory
+    arguments:
+      $inner: '@.inner'
+  
+  Shrikeh\SymfonyApp\HelloWorld\Console\Greet:
+    arguments:
+      $commandFactory: '@hello_world.console.command_factory.celestial_greeting'
+      $resultFormatter: '@Shrikeh\HelloWorld\Console\Greet\BodyGreetedFormatter'
+
+  hello_world.http.query_factory.greetings:
+    class: Shrikeh\SymfonyApp\Http\Action\Cqrs\QueryFactory\Decorator\CorrelatedQuery
+    decorates: Shrikeh\HelloWorld\Http\Greetings\GreetingsFactory
+    arguments:
+      $inner: '@.inner'
+
+  Shrikeh\HelloWorld\Http\Greetings:
+    arguments:
+      $queryFactory: '@hello_world.http.query_factory.greetings'
+      $resultResponseFactory: '@Shrikeh\HelloWorld\Http\Greetings\CelestialGreetingsResponseFactory'
