@@ -57,3 +57,13 @@ services:
     Shrikeh\App\Command\CommandHandler:
       tags:
         - { name: 'messenger.message_handler', bus: 'command.bus' }
+          
+    
+  Symfony\Component\Serializer\Encoder\JsonEncoder: ~
+  Symfony\Component\Serializer\Normalizer\ObjectNormalizer: ~
+  Symfony\Component\Serializer\Serializer:
+    arguments:
+      $normalizers:
+        - '@Symfony\Component\Serializer\Normalizer\ObjectNormalizer'
+      $encoders:
+        - '@Symfony\Component\Serializer\Encoder\JsonEncoder'
