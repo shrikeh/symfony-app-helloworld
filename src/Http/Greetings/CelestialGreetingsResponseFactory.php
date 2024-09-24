@@ -8,7 +8,7 @@ use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Shrikeh\App\Message\Result;
-use Shrikeh\HelloWorld\Bus\Query\PreviousGreetings;
+use Shrikeh\HelloWorld\Cqrs\Query\PreviousGreetings;
 use Shrikeh\SymfonyApp\Http\Action\ResultResponseFactory;
 use Shrikeh\SymfonyApp\Http\Action\ResultResponseFactory\Exception\UnsupportedResult;
 use Shrikeh\SymfonyApp\Http\Formatter\Json\Encoder;
