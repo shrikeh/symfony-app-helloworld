@@ -10,7 +10,12 @@
     }
   ],
   "require": {
-    "php": ">=8.3"
+    "php": ">=8.3",
+    "phpdocumentor/reflection-docblock": "5.x-dev",
+    "phpstan/phpdoc-parser": "^1.31",
+    "symfony/property-access": "^7.1",
+    "symfony/property-info": "7.2.x-dev",
+    "symfony/serializer": "^7.1"
   },
   "require-dev": {
     "ext-ctype": "*",
@@ -32,7 +37,6 @@
     "symfony/framework-bundle": "~7.1.0",
     "symfony/http-foundation": "^7.1",
     "symfony/runtime": "~7.1.0",
-    "symfony/serializer": "^7.1",
     "symfony/yaml": "~7.1.0"
   },
   "repositories": [
