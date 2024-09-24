@@ -38,7 +38,7 @@ services:
         
   Ergebnis\Json\Normalizer\IndentNormalizer: ~
   
-  Normalizer\Format\Indent:
+  Ergebnis\Json\Normalizer\Format\Indent:
     constructor: 'fromSizeAndStyle'
     arguments:
       $size: 2
