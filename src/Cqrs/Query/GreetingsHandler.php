@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shrikeh\HelloWorld\Bus\Query;
+namespace Shrikeh\HelloWorld\Cqrs\Query;
 
 use Shrikeh\App\Query\QueryHandler;
 

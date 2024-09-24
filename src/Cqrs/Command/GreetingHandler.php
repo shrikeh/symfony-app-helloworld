@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shrikeh\HelloWorld\Bus\Command;
+namespace Shrikeh\HelloWorld\Cqrs\Command;
 
 use Shrikeh\App\Command\CommandHandler;
 
