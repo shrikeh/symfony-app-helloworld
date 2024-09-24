@@ -51,3 +51,9 @@ services:
     Shrikeh\SymfonyApp\Http\Action:
       tags:
         - { name: 'controller.service_arguments' }
+    Shrikeh\App\Query\QueryHandler:
+      tags:
+        - { name: 'messenger.message_handler', bus: 'query.bus' }
+    Shrikeh\App\Command\CommandHandler:
+      tags:
+        - { name: 'messenger.message_handler', bus: 'command.bus' }
