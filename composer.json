@@ -22,7 +22,7 @@
     "phpbench/phpbench": "^1.3",
     "phpro/grumphp": "*",
     "phpro/grumphp-shim": "^2.8",
-    "shrikeh/app-symfony": "*",
+    "shrikeh/app-symfony": "@dev",
     "shrikeh/php-coding-bible": ">=0.2.0",
     "shrikeh/teapot": "^1.0",
     "shrikeh/testing-metapackage": ">=0.3",

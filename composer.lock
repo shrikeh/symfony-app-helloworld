@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e43250cf67e16bd4ac558caf416b5a6",
+    "content-hash": "d5466ca8f1034d7362c90fad0736a4d5",
     "packages": [],
     "packages-dev": [
         {
@@ -6049,12 +6049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrikeh/app-symfony.git",
-                "reference": "7a9e67f527a01fb7a8788a16ef54e2fb58536966"
+                "reference": "f7edfa5ed9d2317f3256d3edab14abd27cc2c58e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrikeh/app-symfony/zipball/7a9e67f527a01fb7a8788a16ef54e2fb58536966",
-                "reference": "7a9e67f527a01fb7a8788a16ef54e2fb58536966",
+                "url": "https://api.github.com/repos/shrikeh/app-symfony/zipball/f7edfa5ed9d2317f3256d3edab14abd27cc2c58e",
+                "reference": "f7edfa5ed9d2317f3256d3edab14abd27cc2c58e",
                 "shasum": ""
             },
             "require": {
@@ -6176,10 +6176,10 @@
             ],
             "description": "Symfony implementations of common App components",
             "support": {
-                "source": "https://github.com/shrikeh/app-symfony/tree/0.2.0",
+                "source": "https://github.com/shrikeh/app-symfony/tree/main",
                 "issues": "https://github.com/shrikeh/app-symfony/issues"
             },
-            "time": "2024-09-23T14:10:44+00:00"
+            "time": "2024-09-24T22:21:34+00:00"
         },
         {
             "name": "shrikeh/common-app",
@@ -10107,7 +10107,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "shrikeh/app-symfony": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
