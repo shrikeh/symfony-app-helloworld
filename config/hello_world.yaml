@@ -39,7 +39,7 @@ services:
   Ergebnis\Json\Normalizer\IndentNormalizer: ~
   
   Ergebnis\Json\Printer\Printer: ~
-    
+  Ergebnis\Json\Printer\PrinterInterface: '@Ergebnis\Json\Printer\Printer'
   
   Ergebnis\Json\Normalizer\Format\Indent:
     constructor: 'fromSizeAndStyle'
