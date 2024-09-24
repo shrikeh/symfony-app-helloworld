@@ -14,7 +14,7 @@ services:
     arguments:
       $inner: '@.inner'
   
-  Shrikeh\SymfonyApp\HelloWorld\Console\Greet:
+  Shrikeh\HelloWorld\Console\Greet:
     arguments:
       $commandFactory: '@hello_world.console.command_factory.celestial_greeting'
       $resultFormatter: '@Shrikeh\HelloWorld\Console\Greet\BodyGreetedFormatter'
