@@ -10,6 +10,6 @@ final readonly class GreetingHandler implements CommandHandler
 {
     public function __invoke(CelestialGreeting $celestialGreeting): CelestialBodyGreeted
     {
-
+        return new CelestialBodyGreeted();
     }
 }
