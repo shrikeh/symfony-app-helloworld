@@ -11,7 +11,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final readonly class CelestialGreetingFactory implements CommandFactory
 {
-
     public function build(InputInterface $input, OutputInterface $output): CelestialGreeting
     {
         return new CelestialGreeting();

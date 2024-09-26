@@ -1,17 +1,23 @@
 framework:
-    messenger:
-        # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
-        # failure_transport: failed
-
-        transports:
-            # https://symfony.com/doc/current/messenger.html#transport-configuration
-            # async: '%env(MESSENGER_TRANSPORT_DSN)%'
-            # failed: 'doctrine://default?queue_name=failed'
-            # sync: 'sync://'
-
-        routing:
-            # Route your messages to the transports
-            # 'App\Message\YourMessage': async
+  messenger:
+    default_bus: query.bus
+    buses:
+      command.bus:
+        default_middleware: true
+        middleware:
+          - 'add_bus_name_stamp_middleware': ['messenger.command.bus']
+          - failed_message_processing_middleware
+          - send_message
+          - 'command_bus.middleware.handle_message'
+          - Shrikeh\SymfonyApp\Bus\Middleware\CorrelatedMessage
+      query.bus:
+        default_middleware: true
+        middleware:
+          - 'add_bus_name_stamp_middleware': ['messenger.query.bus']
+          - failed_message_processing_middleware
+          - send_message
+          - 'query_bus.middleware.handle_message'
+          - Shrikeh\SymfonyApp\Bus\Middleware\CorrelatedMessage
 
 # when@test:
 #    framework:
@@ -20,3 +26,14 @@ framework:
 #                # replace with your transport name here (e.g., my_transport: 'in-memory://')
 #                # For more Messenger testing tools, see https://github.com/zenstruck/messenger-test
 #                async: 'in-memory://'
+
+services:
+  'query_bus.middleware.handle_message':
+    class: Symfony\Component\Messenger\Middleware\HandleMessageMiddleware
+    arguments:
+      - '@query.bus.messenger.handlers_locator'
+  'command_bus.middleware.handle_message':
+    class: Symfony\Component\Messenger\Middleware\HandleMessageMiddleware
+    arguments:
+      - '@command.bus.messenger.handlers_locator'
+      

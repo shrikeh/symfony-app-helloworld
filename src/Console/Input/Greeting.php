@@ -33,6 +33,8 @@ final readonly class Greeting implements Input
     public function add(InputDefinition $definition): InputDefinition
     {
         $definition->addArgument($this->addArgument());
+
+        return $definition;
     }
 
     private function inputName(): HelloWorld

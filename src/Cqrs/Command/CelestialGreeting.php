@@ -20,7 +20,6 @@ final readonly class CelestialGreeting implements Command, Correlated, JsonSeria
         public string $greeting = self::DEFAULT_GREETING,
         public string $celestialBody = self::DEFAULT_CELESTIAL_BODY
     ) {
-
     }
 
     public function jsonSerialize(): mixed

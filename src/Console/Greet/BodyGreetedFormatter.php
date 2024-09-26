@@ -11,7 +11,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final readonly class BodyGreetedFormatter implements ResultOutputFormatter
 {
-
     public function render(Result $result, InputInterface $input, OutputInterface $output): void
     {
         // TODO: Implement render() method.

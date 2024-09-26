@@ -13,13 +13,11 @@ use Shrikeh\SymfonyApp\Http\Action\ResultResponseFactory;
 
 final readonly class Greetings implements Action
 {
-
     public function __construct(
         private CorrelatedQueryFactory $queryFactory,
         private CorrelatingQueryBus $queryBus,
         private ResultResponseFactory $resultResponseFactory,
     ) {
-
     }
 
     public function __invoke(ServerRequestInterface $request): ResponseInterface

@@ -16,7 +16,7 @@ trait AddArgument
     {
         return new InputArgument(
             name: $this->inputName()->value,
-            mode: InputArgument::REQUIRED,
+            mode: InputArgument::OPTIONAL,
             description: $this->description,
             default: $this->default,
         );

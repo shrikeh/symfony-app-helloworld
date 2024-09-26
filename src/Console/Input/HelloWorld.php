@@ -8,5 +8,4 @@ enum HelloWorld: string
 {
     case GREETING = 'greeting';
     case CELESTIAL_BODY = 'celestial_body';
-
 }

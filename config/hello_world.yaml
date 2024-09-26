@@ -18,6 +18,24 @@ services:
     arguments:
       $commandFactory: '@hello_world.console.command_factory.celestial_greeting'
       $resultFormatter: '@Shrikeh\HelloWorld\Console\Greet\BodyGreetedFormatter'
+    configurator: '@hello_world.console.greet.configurator'
+    
+  hello_world.console.greet.configurator:
+    class: Shrikeh\SymfonyApp\Console\Action\Configurator\InputConfigurator
+    constructor: 'fromServiceTagIterator'
+    arguments:
+      - !tagged_iterator { tag: hello_world.console.greet.input }
+    
+  Shrikeh\HelloWorld\Console\Input\Greeting:
+    arguments:
+      $description: 'The greeting to give the celestial body'
+    tags:
+      - { name: hello_world.console.greet.input, priority: 10 }
+  Shrikeh\HelloWorld\Console\Input\CelestialBody:
+    arguments:
+      $description: 'The celestial body to be greeted'
+    tags:
+      - { name: hello_world.console.greet.input, priority: 5 }
 
   hello_world.http.query_factory.greetings:
     class: Shrikeh\SymfonyApp\Http\Action\Cqrs\QueryFactory\Decorator\CorrelatedQuery
@@ -67,3 +85,10 @@ services:
         - '@Symfony\Component\Serializer\Normalizer\ObjectNormalizer'
       $encoders:
         - '@Symfony\Component\Serializer\Encoder\JsonEncoder'
+
+  Symfony\Bridge\PsrHttpMessage\HttpFoundationFactoryInterface: '@Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory'
+  Symfony\Bridge\PsrHttpMessage\HttpMessageFactoryInterface: '@Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory'
+  Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory: ~
+  Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory: ~
+  Symfony\Bridge\PsrHttpMessage\ArgumentValueResolver\PsrServerRequestResolver: ~
+  Symfony\Bridge\PsrHttpMessage\EventListener\PsrResponseListener: ~

@@ -11,7 +11,6 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 final class HelloWorldExtension extends Extension
 {
-
     /**
      * @codeCoverageIgnore
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
